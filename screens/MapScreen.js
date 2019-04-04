@@ -3,8 +3,10 @@ import { StyleSheet, WebView, View } from "react-native";
 
 export default class MapScreen extends React.Component {
   static navigationOptions = {
-    title: "Links"
+    title: "Map"
   };
+
+  const mapHTML = require('./Map/Map.html'); 
 
   postMessage() {
     this.refs.webview.postMessage(“Hello from RN”);
@@ -13,8 +15,6 @@ export default class MapScreen extends React.Component {
   onMessage(message) {
     console.log(JSON.parse(message.nativeEvent.data));
   }
-
-  const mapHTML = require('./Map/Map.html'); 
 
   render() {
     return (
