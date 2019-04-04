@@ -14,7 +14,7 @@ export default class MapScreen extends React.Component {
     console.log(JSON.parse(message.nativeEvent.data));
   }
 
-  const mapHTML = require('../components/Map/Map.html'); 
+  const mapHTML = require('./Map/Map.html'); 
 
   render() {
     return (
