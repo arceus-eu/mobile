@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+  <button onclick="postSomething()">Post Something to backend</button>
+  <div id="someDataFromFrontEnd"></div>
+
+  <script>
+    function postSomething() {
+      postMessage(JSON.stringify({ player: 'JohnDoe', score: 1337, doPost: true }, '*', false));
+    }
+
+    function setSomethingOnFrontEnd(val) {
+      document.getElementById("someDataFromFrontEnd").innerHTML = "Clicked on: " + val;
+    }
+
+    // Listening to state change in React Native
+    document.addEventListener('message', event => {
+      eval(event.data);
+    }, false);
+
+  </script>
+</body>
+
+</html>
